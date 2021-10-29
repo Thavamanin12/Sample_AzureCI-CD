@@ -25,6 +25,8 @@ steps:
   inputs:
     command: 'restore'
     feedsToUse: 'select'
+
+
 - task: SonarQubePreBuild@4
   inputs:
     SonarQube: 'SonarQube'
