@@ -34,6 +34,7 @@ steps:
     projectVersion: '1.0'
 
 
+
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
@@ -56,6 +57,12 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'XUnit'
+    testResultsFiles: '**/TEST-*.xml'
+    failTaskOnFailedTests: true
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
