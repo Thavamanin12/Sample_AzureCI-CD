@@ -63,6 +63,7 @@ steps:
     testResultsFormat: 'XUnit'
     testResultsFiles: '**/TEST-*.xml'
     failTaskOnFailedTests: true
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
